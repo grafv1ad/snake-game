@@ -1,0 +1,97 @@
+$main-color: #c3d1fa;
+
+// Основные стили
+* {
+	margin: 0; padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif; 
+}
+.main {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+// Сетка
+.grid {
+	display: grid;
+	border-radius: 6px;
+	border: 3px solid $main-color;
+}
+.cell {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	border: 1px dashed $main-color;
+}
+
+// Очки и описание
+.score {
+	font-size: 24px;
+	margin: 0 0 20px 0;
+	color: $main-color;	
+	&__counter {
+		font-size: 26px;
+	}
+}
+.desc {
+	font-size: 14px;
+	margin: 10px 0 0 0;
+	color: $main-color;
+	&__link {
+		text-decoration: none;
+		color: #9cdbbe;
+		transition: color .3s;
+		&:hover {
+			color: #ee6600;
+		}
+	}
+}
+
+// Игровые объекты
+.snake {
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	transition: transform .3s;
+	&_body {
+		background: #9cdbbe;
+	}
+	&_head {
+		background: #a4e4f5;
+	}
+}
+.food {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: #ee6600;
+	transform: scale(0);
+	transition: .5s;
+	animation: pulse .75s ease-out infinite .5s alternate;
+}
+@keyframes pulse {
+	from {
+		transform: scale(1)
+	}
+	to {
+		transform: scale(.95);
+	}
+}
+
+// Конец игры
+.game-over {
+	display: none;
+	font-size: 26px;
+	margin: 0 0 20px 0;
+	&_win {
+		color: #9cdbbe;
+	}
+	&_lose {
+		color: #ee6600;
+	}
+}

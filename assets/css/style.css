@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: sans-serif; }
+
+.main {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  border-radius: 6px;
+  border: 3px solid #c3d1fa; }
+
+.cell {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 1px dashed #c3d1fa; }
+
+.score {
+  font-size: 24px;
+  margin: 0 0 20px 0;
+  color: #c3d1fa; }
+  .score__counter {
+    font-size: 26px; }
+
+.desc {
+  font-size: 14px;
+  margin: 10px 0 0 0;
+  color: #c3d1fa; }
+  .desc__link {
+    text-decoration: none;
+    color: #9cdbbe;
+    -webkit-transition: color .3s;
+    transition: color .3s; }
+    .desc__link:hover {
+      color: #ee6600; }
+
+.snake {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s; }
+  .snake_body {
+    background: #9cdbbe; }
+  .snake_head {
+    background: #a4e4f5; }
+
+.food {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ee6600;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-animation: pulse .75s ease-out infinite .5s alternate;
+          animation: pulse .75s ease-out infinite .5s alternate; }
+
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  to {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95); } }
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  to {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95); } }
+
+.game-over {
+  display: none;
+  font-size: 26px;
+  margin: 0 0 20px 0; }
+  .game-over_win {
+    color: #9cdbbe; }
+  .game-over_lose {
+    color: #ee6600; }
