@@ -17,7 +17,7 @@ const moveInterval = setInterval(moveSnake, 350);
 
 // Выводим предупреждение, если юзер зашел с телефона
 if (window.matchMedia('(max-width: 600px)').matches) {
-	alert('Внимание! В игре не предусмотрено управление для мобильных устройств');
+	alert('Warning! The game is not supported on mobile devices');
 }
 
 function createGrid() {
